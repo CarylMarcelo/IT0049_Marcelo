@@ -1,0 +1,34 @@
+CRITICAL - 2026-10-03 13:47:33 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "C:\xampp\htdocs\demoElectric\app\Views/pagination/puihaha.php"
+[Method: GET, Route: dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('C:\\xampp\\htdocs\\demoElectric\\app\\Views/pagination/puihaha.php')
+ 2 SYSTEMPATH\Pager\Pager.php(130): CodeIgniter\View\View->render('C:\\xampp\\htdocs\\demoElectric\\app\\Views/pagination/puihaha.php')
+ 3 SYSTEMPATH\Pager\Pager.php(87): CodeIgniter\Pager\Pager->displayLinks('', 'puihaha')
+ 4 APPPATH\Views\dashboard.php(543): CodeIgniter\Pager\Pager->links('', 'puihaha')
+ 5 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\demoElectric\\app\\Views\\dashboard.php')
+ 6 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('dashboard', [], true)
+ 8 APPPATH\Controllers\Auth.php(131): view('dashboard', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-03 13:47:40 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "C:\xampp\htdocs\demoElectric\app\Views/pagination/puihaha.php"
+[Method: GET, Route: dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('C:\\xampp\\htdocs\\demoElectric\\app\\Views/pagination/puihaha.php')
+ 2 SYSTEMPATH\Pager\Pager.php(130): CodeIgniter\View\View->render('C:\\xampp\\htdocs\\demoElectric\\app\\Views/pagination/puihaha.php')
+ 3 SYSTEMPATH\Pager\Pager.php(87): CodeIgniter\Pager\Pager->displayLinks('', 'puihaha')
+ 4 APPPATH\Views\dashboard.php(543): CodeIgniter\Pager\Pager->links('', 'puihaha')
+ 5 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\demoElectric\\app\\Views\\dashboard.php')
+ 6 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('dashboard', [], true)
+ 8 APPPATH\Controllers\Auth.php(131): view('dashboard', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

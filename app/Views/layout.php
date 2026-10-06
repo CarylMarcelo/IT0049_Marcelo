@@ -45,6 +45,17 @@
             font-weight: 600;
         }
 
+        .navbar-nav form {
+            margin: 0;
+        }
+
+        .navbar-nav form .nav-link {
+            cursor: pointer;
+            font-family: inherit;
+            font-size: inherit;
+            padding: 8px 0;
+        }
+
         .hero-section {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
             color: white;
@@ -157,6 +168,132 @@
         .bg-light-custom {
             background-color: var(--light-color) !important;
         }
+
+        /* Puihaha Pagination */
+
+        .pagination {
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 0;
+        }
+
+        .pagination li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 40px;
+            height: 40px;
+
+            padding: 0 12px;
+
+            border: 1px solid #dee2e6;
+
+            border-radius: 10px;
+
+            background-color: white;
+
+            color: var(--primary-color);
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            transition: all 0.2s ease;
+        }
+
+        .pagination li a:hover {
+            background-color: #eff6ff;
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+
+            transform: translateY(-2px);
+        }
+
+        .pagination li.active a {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+
+            box-shadow: 0 4px 10px rgba(30, 64, 175, 0.25);
+        }
+
+        /* Dashboard Statistic Cards */
+
+        .dashboard-stat-card {
+            min-height: 150px;
+            padding: 28px;
+
+            border-radius: 16px;
+
+            color: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            overflow: hidden;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .dashboard-stat-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+        }
+
+        .dashboard-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .dashboard-stat-label {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
+        .dashboard-stat-icon {
+            font-size: 3rem;
+            opacity: 0.25;
+        }
+
+
+        /* Total */
+        .stat-total {
+            background: linear-gradient(135deg,
+                    #4f6ee8,
+                    #7650a8);
+        }
+
+
+        /* Active */
+        .stat-active {
+            background: linear-gradient(135deg,
+                    #10b981,
+                    #22d875);
+        }
+
+
+        /* Inactive */
+        .stat-inactive {
+            background: linear-gradient(135deg,
+                    #e91e63,
+                    #ff5722);
+        }
+
+
+        /* Suspended */
+        .stat-suspended {
+            background: linear-gradient(135deg,
+                    #ff5722,
+                    #fbbf24);
+        }
     </style>
 </head>
 
@@ -167,7 +304,7 @@
             <a class="navbar-brand" href="<?= base_url() ?>">
                 <i class="fas fa-bolt text-warning me-2"></i>Puihaha Electric
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bstarget="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -187,11 +324,52 @@
                     <li class="nav-item">
                         <a class="nav-link <?= (isset($page) && $page == 'contact') ? 'active' : '' ?>" href="<?=
                                                                                                                 base_url('contact') ?>">Contact</a>
-                    </li>
+                        <?php if (session()->get('isLogged') === true): ?>
+
                     <li class="nav-item">
-                        <a class="nav-link <?= (isset($page) && $page == 'register') ? 'active' : '' ?>" href="<?=
-                                                                                                                base_url('register') ?>">Register</a>
+                        <a
+                            class="nav-link <?= (isset($page) && $page == 'dashboard') ? 'active' : '' ?>"
+                            href="<?= base_url('dashboard') ?>">
+                            <i class="fas fa-gauge-high me-1"></i>
+                            Dashboard
+                        </a>
                     </li>
+
+                    <li class="nav-item">
+                        <form
+                            action="<?= base_url('logout') ?>"
+                            method="post"
+                            class="d-inline">
+                            <?= csrf_field() ?>
+
+                            <button
+                                type="submit"
+                                class="nav-link border-0 bg-transparent">
+                                <i class="fas fa-right-from-bracket me-1"></i>
+                                Logout
+                            </button>
+                        </form>
+                    </li>
+
+                <?php else: ?>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link <?= (isset($page) && $page == 'register') ? 'active' : '' ?>"
+                            href="<?= base_url('register') ?>">
+                            Register
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link <?= (isset($page) && $page == 'login') ? 'active' : '' ?>"
+                            href="<?= base_url('login') ?>">
+                            Login
+                        </a>
+                    </li>
+
+                <?php endif; ?>
                 </ul>
             </div>
         </div>
