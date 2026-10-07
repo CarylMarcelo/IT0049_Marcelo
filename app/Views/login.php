@@ -86,7 +86,7 @@
                                     class="form-label fw-semibold"
                                 >
                                     <i class="fas fa-user me-2 text-primary-custom"></i>
-                                    Username
+                                    Gmail
                                 </label>
 
                                 <input
@@ -95,7 +95,7 @@
                                     id="username"
                                     name="username"
                                     value="<?= esc(old('username')) ?>"
-                                    placeholder="Enter your username"
+                                    placeholder="Enter your Gmail address"
                                     required
                                     autofocus
                                 >
